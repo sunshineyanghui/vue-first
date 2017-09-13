@@ -1,12 +1,16 @@
 <template lang="html">
   <div class="post">
-    post
+    <post-body>postbody</post-body>
   </div>
 </template>
 
 <script>
+import PostBody from './PostBody'
 export default {
-  name:'Post'
+  name:'Post',
+  components:{
+    PostBody
+  }
 }
 </script>
 
