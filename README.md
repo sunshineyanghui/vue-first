@@ -47,3 +47,13 @@ new Vue({
 > 事件绑定 v-on
 
 > v-for 循环渲染
+
+# vue 组件
+
+一个 vue 组件通常就写成一个 .vue 文件，里面内容分三类：
+
+- 模板， template 标签内
+- JS 代码， script 标签内
+- CSS ，写到 style 标签内
+
+> 每一个 vue 组件中的 <style> 都可以加上 scoped 修饰符，这样，保证了本文件的 css 不会影响其他文件。
