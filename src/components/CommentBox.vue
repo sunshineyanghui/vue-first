@@ -1,10 +1,14 @@
 <template lang="html">
   <div class="comment-box">
     <div class="comment-form">
-      <input type="text" name="" id="commentForm" @keyup.enter="submitComment" value="">
+      <div class="input">
+        <input type="text" name="" id="commentForm" @keyup.enter="submitComment" value="">
+        <div class="underline"></div>
+      </div>
+      <button @click="submitComment">提交</button>
     </div>
     <ul>
-      <li v-for="comment in comments">{{comment.text}}</li>
+      <li v-for="comment in reverseComments">{{comment.text}}</li>
     </ul>
   </div>
 </template>
@@ -18,6 +22,12 @@ export default {
         {text:'这是第一条'},
         {text:'这是第二条'}
       ]
+    }
+  },
+  computed:{
+    reverseComments(){
+      return this.comments
+            .slice().reverse();
     }
   },
   methods:{
@@ -39,13 +49,43 @@ export default {
   margin:0 auto;
   background-color: #fff;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-  text-align: center;
   color: rgba(0, 0, 0, 0.8);
   padding: 10px;
 }
 li{
   list-style: none;
-  line-height: 30px;
+  line-height: 45px;
+  font-size: 16px;
 
+}
+.comment-form{
+  display: flex;
+  margin-bottom: 30px;
+}
+.input{
+  flex-grow: 1;
+}
+input{
+  width:100%;
+  height:40px;
+  line-height: 40px;
+  font-size: 18px;
+  border:0;
+  color: rgba(0, 0, 0, 0.8);
+}
+input:focus{
+  border:0;
+  outline: 0;
+}
+.underline{
+  height:1px;
+  background: #00bcd4;
+}
+button{
+  min-width:80px;
+  color:#fff;
+  background-color: deeppink;
+  border:0;
+  margin-left:20px;
 }
 </style>
