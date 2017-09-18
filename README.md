@@ -57,3 +57,9 @@ new Vue({
 - CSS ，写到 style 标签内
 
 > 每一个 vue 组件中的 <style> 都可以加上 scoped 修饰符，这样，保证了本文件的 css 不会影响其他文件。
+
+# vuex
+
+```
+npm install vuex
+```

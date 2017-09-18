@@ -16,15 +16,18 @@
 <script>
 export default {
   name:'comment-box',
-  data(){
-    return{
-      comments:[
-        {text:'这是第一条'},
-        {text:'这是第二条'}
-      ]
-    }
-  },
+  // data(){
+  //   return{
+  //     comments:[
+  //       {text:'这是第一条'},
+  //       {text:'这是第二条'}
+  //     ]
+  //   }
+  // },
   computed:{
+    comments(){
+      return this.$store.state.comment.all
+    },
     reverseComments(){
       return this.comments
             .slice().reverse();
